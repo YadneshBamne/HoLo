@@ -87,7 +87,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                         className="card p-4 flex gap-4"
                       >
                         {/* Image */}
-                        <div className="w-20 h-20 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden">
+                        <div className="w-20 h-20 shrink-0 bg-gray-100 rounded-lg overflow-hidden">
                           {mainImage ? (
                             <img
                               src={mainImage}
