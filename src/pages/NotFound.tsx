@@ -5,7 +5,7 @@ import FuzzyText from '../components/FuzzyText';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-primary-light to-primary-lighter flex items-center justify-center px-4 overflow-hidden relative">
+    <div className="min-h-screen  from-primary via-primary-light to-primary-lighter flex items-center justify-center px-4 overflow-hidden relative">
       {/* Decorative Blurs */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl" />
