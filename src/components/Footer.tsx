@@ -21,7 +21,7 @@ const Footer = () => {
         
         <footer className="relative z-10">
           {/* Bubbles Container */}
-          <div className="absolute top-0 left-0 right-0 h-4 bg-[#D8A1A5] bubble-container">
+          {/* <div className="absolute top-0 left-0 right-0 h-4 bg-[#D8A1A5] bubble-container">
             {bubbles.map((bubble) => (
               <div
                 key={bubble.id}
@@ -39,7 +39,7 @@ const Footer = () => {
                 } as React.CSSProperties}
               />
             ))}
-          </div>
+          </div> */}
 
           {/* Footer Content */}
           <div className="relative z-20 p-4 md:p-8 bg-[#D8A1A5]">
