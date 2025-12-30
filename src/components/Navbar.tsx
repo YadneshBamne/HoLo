@@ -33,14 +33,11 @@ export default function Navbar() {
     <>
       <nav 
         className={`sticky top-0 z-40 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-b-3xl' 
-            : 'bg-transparent'
-        }`}
-        style={isScrolled ? {
-          backdropFilter: 'blur(16px) saturate(180%)',
-          WebkitBackdropFilter: 'blur(16px) saturate(180%)',
-        } : {}}
+  isScrolled
+    ? 'bg-white border-b border-gray-200 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] rounded-b-3xl'
+    : 'bg-transparent'
+}`}
+
       >
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
