@@ -29,9 +29,19 @@ export default function CategoryFilter({ selectedCategory, onSelectCategory }: C
         onClick={() => onSelectCategory(null)}
         className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
           selectedCategory === null
-            ? 'bg-primary text-white shadow-lg scale-105'
-            : 'bg-white text-gray-700 hover:bg-primary-lighter hover:text-primary-dark shadow-md'
+            ? 'text-white shadow-lg scale-105'
+            : 'bg-white text-gray-700 shadow-md hover:shadow-lg'
         }`}
+        style={
+          selectedCategory === null
+            ? {
+                background: 'linear-gradient(135deg, #D8A1A5 0%, #E8B4B8 100%)',
+                boxShadow: '0 8px 24px rgba(216, 161, 165, 0.4)',
+              }
+            : {
+                border: '1.5px solid rgba(216, 161, 165, 0.2)',
+              }
+        }
       >
         All Products
       </button>
@@ -41,9 +51,19 @@ export default function CategoryFilter({ selectedCategory, onSelectCategory }: C
           onClick={() => onSelectCategory(category.id)}
           className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
             selectedCategory === category.id
-              ? 'bg-primary text-white shadow-lg scale-105'
-              : 'bg-white text-gray-700 hover:bg-primary-lighter hover:text-primary-dark shadow-md'
+              ? 'text-white shadow-lg scale-105'
+              : 'bg-white text-gray-700 shadow-md hover:shadow-lg'
           }`}
+          style={
+            selectedCategory === category.id
+              ? {
+                  background: 'linear-gradient(135deg, #D8A1A5 0%, #E8B4B8 100%)',
+                  boxShadow: '0 8px 24px rgba(216, 161, 165, 0.4)',
+                }
+              : {
+                  border: '1.5px solid rgba(216, 161, 165, 0.2)',
+                }
+          }
         >
           {category.name}
         </button>

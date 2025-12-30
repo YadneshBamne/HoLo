@@ -7,8 +7,9 @@ import ProductDrawer from '../components/ProductDrawer';
 import ScrollBaseAnimation from '@/components/motion-trail';
 import ImageMouseTrail from '@/components/mousetrail';
 import { supabase } from '../lib/supabase';
-import { Sparkles, Heart, Package, Truck } from 'lucide-react';
+import { Sparkles, Heart, Package, Truck, Leaf, Award, } from 'lucide-react';
 import { AnimateSvg } from '@/svgComponents/AnimateSvg';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -16,6 +17,28 @@ export default function Home() {
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [productImages, setProductImages] = useState<string[]>([]);
+  const features = [
+    {
+      icon: Sparkles,
+      title: 'Handmade with Care',
+      description: 'Each piece is lovingly crafted by hand with attention to detail',
+    },
+    {
+      icon: Leaf,
+      title: 'Natural Materials',
+      description: 'Using only the finest natural yarn and eco-friendly materials',
+    },
+    {
+      icon: Award,
+      title: 'Premium Quality',
+      description: 'Rich in quality and crafted for lasting beauty and durability',
+    },
+    {
+      icon: Heart,
+      title: 'Made with Love',
+      description: 'Never tested on animals, made with love and ethical practices',
+    },
+  ];
 
   const handleOpenProductDrawer = (productId: string) => {
     setSelectedProductId(productId);
@@ -290,7 +313,7 @@ const INFINITY_PATH =
         imgClass='sm:w-80 w-48 sm:h-88 h-46'
       >
         <article className='relative z-50 '>
-          <h1 className='lg:text-4xl md:text-3xl text-3xl text-center font-f5 tracking-wide font-semibold'>
+          <h1 className='lg:text-4xl md:text-3xl text-3xl text-center font-f3 tracking-wider'>
             Experience Interactive Designs with <br />
             Dynamic Mouse Trails
           </h1>
@@ -300,107 +323,102 @@ const INFINITY_PATH =
 
       {/* Features Section */}
 {/* Features Section - Redesigned */}
-<section className="py-20 bg-primary-lighter w-full">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Section Title */}
-    <div className="text-center mb-12">
-      <div className="inline-block mb-4">
-        <svg 
-          width="40" 
-          height="40" 
-          viewBox="0 0 1 1" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-          className="mx-auto"
+<section 
+      className="py-24 w-full relative overflow-hidden"
+      // style={{
+      //   background: 'linear-gradient(180deg, #FFFFFF 0%, #FCE7F3 50%, #FFF0F3 100%)',
+      // }}
+    >
+      {/* Decorative Background Elements */}
+      <div 
+        className="absolute top-20 -left-40 w-80 h-80 rounded-full opacity-20 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, #D8A1A5 0%, transparent 70%)',
+        }}
+      />
+      <div 
+        className="absolute bottom-20 -right-40 w-96 h-96 rounded-full opacity-20 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, #E8B4B8 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <path
-            d="M0.5 0.1 L0.3 0.4 L0.5 0.4 L0.7 0.4 L0.5 0.1 M0.2 0.5 L0.5 0.5 L0.8 0.5 M0.35 0.6 L0.5 0.9 L0.65 0.6"
-            stroke="#D8A1A5"
-            strokeWidth="0.05"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-      <h2 className="text-4xl md:text-5xl font-bold font-f1 text-gray-800 mb-2">
-        Why Customers Love Us
-      </h2>
-    </div>
+          <div className="inline-block mb-4">
+          </div>
+          <h2 className="text-5xl font-black font-f1 text-gray-900 mb-4 tracking-tight">
+            Why Customers Love Us
+          </h2>
+          <p className="text-xl text-gray-600 font-f1 max-w-2xl mx-auto">
+            Discover what makes our handcrafted pieces truly special
+          </p>
+        </motion.div>
 
-    {/* Features Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
-      {/* Feature 1 */}
-      <div className="bg-white p-8 text-center border-r border-gray-200 last:border-r-0 hover:bg-primary-lighter/30 transition-all duration-300 group">
-        <div className="inline-flex items-center justify-center w-20 h-20 mb-6">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="35" stroke="#D8A1A5" strokeWidth="2" strokeDasharray="4 4"/>
-            <path d="M30 35 L35 40 L30 45 M35 30 Q40 35 35 40 Q40 45 35 50" stroke="#D8A1A5" strokeWidth="2.5" strokeLinecap="round"/>
-            <circle cx="50" cy="30" r="3" fill="#D8A1A5"/>
-            <circle cx="55" cy="40" r="2.5" fill="#D8A1A5"/>
-            <circle cx="50" cy="50" r="3" fill="#D8A1A5"/>
-          </svg>
-        </div>
-        <h3 className="text-lg font-bold text-gray-800 mb-3">
-          Handmade with Care
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Each piece is lovingly crafted by hand with attention to detail
-        </p>
-      </div>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="text-center p-8 rounded-[28px] group relative overflow-hidden"
+              style={{
+                background: 'rgba(255, 255, 255, 0.75)',
+                backdropFilter: 'blur(16px)',
+                border: '1.5px solid rgba(216, 161, 165, 0.25)',
+                boxShadow: '0 8px 32px rgba(216, 161, 165, 0.1)',
+              }}
+            >
+              {/* Hover Glow */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[28px]"
+                style={{
+                  background: 'linear-gradient(135deg, transparent 0%, rgba(216, 161, 165, 0.08) 50%, transparent 100%)',
+                }}
+              />
 
-      {/* Feature 2 */}
-      <div className="bg-white p-8 text-center border-r border-gray-200 last:border-r-0 hover:bg-primary-lighter/30 transition-all duration-300 group">
-        <div className="inline-flex items-center justify-center w-20 h-20 mb-6">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="35" stroke="#D8A1A5" strokeWidth="2"/>
-            <text x="40" y="50" fontSize="28" fontWeight="bold" fill="#D8A1A5" textAnchor="middle">100%</text>
-            <path d="M30 25 Q35 20 40 25 Q45 20 50 25" stroke="#D8A1A5" strokeWidth="2" strokeLinecap="round" fill="none"/>
-          </svg>
-        </div>
-        <h3 className="text-lg font-bold text-gray-800 mb-3">
-          Natural Ingredients Only
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Using only the finest natural yarn and eco-friendly materials
-        </p>
-      </div>
+              {/* Icon Container */}
+              <div className="relative mb-6 flex justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(216, 161, 165, 0.15) 0%, rgba(232, 180, 184, 0.1) 100%)',
+                    border: '1.5px solid rgba(216, 161, 165, 0.25)',
+                  }}
+                >
+                  <feature.icon 
+                    className="w-10 h-10 text-[#D8A1A5]" 
+                    strokeWidth={2}
+                  />
+                </motion.div>
+              </div>
 
-      {/* Feature 3 */}
-      <div className="bg-white p-8 text-center border-r border-gray-200 last:border-r-0 hover:bg-primary-lighter/30 transition-all duration-300 group">
-        <div className="inline-flex items-center justify-center w-20 h-20 mb-6">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M40 25 Q30 30 30 40 Q30 50 40 55 Q50 50 50 40 Q50 30 40 25" stroke="#D8A1A5" strokeWidth="2.5" fill="none"/>
-            <circle cx="40" cy="40" r="8" stroke="#D8A1A5" strokeWidth="2" fill="none"/>
-            <path d="M35 40 L38 43 L45 36" stroke="#D8A1A5" strokeWidth="2" strokeLinecap="round" fill="none"/>
-          </svg>
-        </div>
-        <h3 className="text-lg font-bold text-gray-800 mb-3">
-          Premium Quality
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Rich in quality and crafted for lasting beauty and durability
-        </p>
-      </div>
+              {/* Title */}
+              <h3 className="text-xl font-medium text-gray-900 mb-3 relative">
+                {feature.title}
+              </h3>
 
-      {/* Feature 4 */}
-      <div className="bg-white p-8 text-center hover:bg-primary-lighter/30 transition-all duration-300 group">
-        <div className="inline-flex items-center justify-center w-20 h-20 mb-6">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M25 45 Q25 35 35 35 L45 35 Q55 35 55 45" stroke="#D8A1A5" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-            <circle cx="40" cy="28" r="6" stroke="#D8A1A5" strokeWidth="2" fill="none"/>
-            <path d="M30 50 L35 45 M50 50 L45 45" stroke="#D8A1A5" strokeWidth="2" strokeLinecap="round"/>
-            <circle cx="40" cy="50" r="3" fill="#D8A1A5"/>
-          </svg>
+              {/* Description */}
+              <p className="text-gray-600 text-sm leading-relaxed relative">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
-        <h3 className="text-lg font-bold text-gray-800 mb-3">
-          Cruelty-Free
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Never tested on animals, made with love and ethical practices
-        </p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
       {/* Featured Products Section */}
@@ -419,34 +437,100 @@ const INFINITY_PATH =
       </section> */}
 
       {/* All Products Section */}
-      <section id="products" className="py-20 mb-30 bg-primary-lighter w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold font-f1 text-gray-900 mb-4">
-              Our Collection
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Browse through our beautiful handcrafted items
-            </p>
-          </div>
-          
-          {/* Category Filter */}
-          <div className="mb-12">
-            <CategoryFilter
-              selectedCategory={selectedCategory}
-              onSelectCategory={setSelectedCategory}
-            />
-          </div>
+<section id="products" className="py-24 mb-32 relative overflow-hidden">
+  {/* Background Gradient */}
+  <div 
+    className="absolute inset-0 -z-10"
+    style={{
+      background: 'linear-gradient(180deg, #FFFFFF 0%, #FCE7F3 50%, #FFF0F3 100%)',
+    }}
+  />
 
-          {/* Product Grid */}
-          <ProductGrid 
-            products={products} 
-            loading={loading}
-            onOpenProductDrawer={handleOpenProductDrawer}
-          />
-        </div>
-      </section>
+  {/* Decorative Blobs */}
+  <div 
+    className="absolute top-20 -left-40 w-80 h-80 rounded-full opacity-20 blur-3xl -z-10"
+    style={{
+      background: 'radial-gradient(circle, #D8A1A5 0%, transparent 70%)',
+    }}
+  />
+  <div 
+    className="absolute bottom-20 -right-40 w-96 h-96 rounded-full opacity-20 blur-3xl -z-10"
+    style={{
+      background: 'radial-gradient(circle, #E8B4B8 0%, transparent 70%)',
+    }}
+  />
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Header */}
+    <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* Decorative Badge */}
+        {/* <div 
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+          style={{
+            background: 'linear-gradient(135deg, rgba(216, 161, 165, 0.15) 0%, rgba(232, 180, 184, 0.1) 100%)',
+            border: '1.5px solid rgba(216, 161, 165, 0.25)',
+          }}
+        >
+          <span className="text-2xl">🧶</span>
+          <span className="text-sm font-bold tracking-wide text-[#D8A1A5]">
+            HANDCRAFTED WITH LOVE
+          </span>
+        </div> */}
+
+        <h2 
+          className="text-5xl md:text-6xl font-black font-f1 text-gray-900 mb-6 tracking-wide leading-relaxed"
+          style={{
+            background: 'linear-gradient(135deg, #000000 0%, #4A4A4A 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
+          Our Collection
+        </h2>
+        
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-f1">
+          Discover unique, handcrafted crochet pieces made with premium yarn and endless love
+        </p>
+      </motion.div>
+    </div>
+    
+    {/* Category Filter */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="mb-16"
+    >
+      <CategoryFilter
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
+      />
+    </motion.div>
+
+    {/* Product Grid */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+    >
+      <ProductGrid 
+        products={products} 
+        loading={loading}
+        onOpenProductDrawer={handleOpenProductDrawer}
+      />
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Newsletter Section */}
       {/* <section className="py-20 bg-gradient-to-r from-primary to-primary-light w-full">
