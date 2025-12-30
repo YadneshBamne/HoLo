@@ -314,8 +314,8 @@ const INFINITY_PATH =
       >
         <article className='relative z-50 '>
           <h1 className='lg:text-4xl md:text-3xl text-3xl text-center font-f3 tracking-wider'>
-            Experience Interactive Designs with <br />
-            Dynamic Mouse Trails
+            Experience Designs with <br />
+            Mouse Trails
           </h1>
         </article>
       </ImageMouseTrail>

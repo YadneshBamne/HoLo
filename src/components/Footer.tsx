@@ -12,24 +12,14 @@ const Footer = () => {
 
       {/* Footer Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-12">
           {/* Left Column */}
           <div>
-            {/* Brand Name with SplitText */}
-            <div className="mb-2">
-              <SplitText
-                text="Hooks & Loops"
-                className="text-5xl font-black font-f4 pb-2 text-white"
-                delay={100}
-                duration={0.6}
-                ease="power3.out"
-                splitType="chars"
-                from={{ opacity: 0, y: 40 }}
-                to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
-                rootMargin="-100px"
-                textAlign="left"
-              />
+            {/* Brand Name - Simple version without SplitText */}
+            <div className="mb-6">
+              <h2 className="text-5xl font-black font-f4 text-white leading-tight">
+                Hooks & Loops
+              </h2>
             </div>
 
             {/* Description */}
@@ -91,12 +81,12 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/20">
-          <div className="flex flex-col md:flex-row justify-between md:items-end items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">
-              © 2025 <span className="text-white text-md font-f1 font-bold">Hooks & Loops.</span> All rights reserved.
+              © 2025 <span className="text-white text-base font-f1 font-bold">Hooks & Loops.</span> All rights reserved.
             </p>
             <p className="text-white/70 text-sm">
-              Made with <span className="text-white text-xl font-f1 font-bold">love</span> for your home
+              Made with <span className="text-white text-lg font-f1 font-bold">❤️</span> for your home
             </p>
           </div>
         </div>
