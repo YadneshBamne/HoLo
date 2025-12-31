@@ -359,10 +359,10 @@ export default function ProductDetails() {
                                     <span className="text-gray-600 font-medium">Category:</span>
                                     <span className="font-bold text-gray-900">{product.categories?.name || 'N/A'}</span>
                                 </div>
-                                <div className="flex justify-between items-center py-2 border-b border-pink-100">
+                                {/* <div className="flex justify-between items-center py-2 border-b border-pink-100">
                                     <span className="text-gray-600 font-medium">Product ID:</span>
                                     <span className="font-mono font-bold text-gray-900">{product.id.slice(0, 8)}...</span>
-                                </div>
+                                </div> */}
                                 <div className="flex justify-between items-center py-2 border-b border-pink-100">
                                     <span className="text-gray-600 font-medium">Status:</span>
                                     <span className={`font-bold ${isOutOfStock ? 'text-red-600' : 'text-green-600'}`}>

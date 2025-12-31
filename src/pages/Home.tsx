@@ -159,7 +159,7 @@ export default function Home() {
           {/* Left Side Content */}
           <div className="max-w-2xl space-y-10">
             {/* Main Heading */}
-            <div className="space-y-2">
+            <div className="space-y-2 -px-6">
               <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-black drop-shadow-2xl leading-none font-f1">
                 H
                 <span className="blink-eye shine-eye font-extrabold text-[#D8A1A5]">O</span>
@@ -234,10 +234,10 @@ export default function Home() {
 
             {/* Subtitle */}
             <div className="space-y-2">
-              <p className="text-xl md:text-2xl text-black tracking-[0.2em] uppercase font-light">
+              <p className="text-xl md:text-2xl ml-2 text-black tracking-[0.2em] uppercase font-bold">
                 Handmade Crochet
               </p>
-              <p className="text-lg md:text-xl text-black max-w-lg leading-relaxed">
+              <p className="text-lg md:text-xl ml-2 text-black max-w-lg leading-relaxed">
                 Each piece lovingly crafted by hand with premium yarn and attention to every detail
               </p>
             </div>
@@ -313,7 +313,7 @@ export default function Home() {
           imgClass='sm:w-80 w-48 sm:h-88 h-46'
         >
           <article className='relative '>
-            <h1 className='lg:text-4xl md:text-3xl text-3xl text-center font-f6 tracking-wider'>
+            <h1 className='lg:text-4xl md:text-3xl text-3xl text-center text-[#D6A0A4] font-f6 tracking-wider'>
               Experience Designs with <br />
               Mouse Trails
             </h1>

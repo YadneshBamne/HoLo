@@ -66,7 +66,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   >
                     <motion.span
                       {...framerText(idx)}
-                      className="font-medium text-gray-700 group-hover:text-primary-dark"
+                      className="font-bold text-gray-700 group-hover:text-primary-dark"
                     >
                       {item.label}
                     </motion.span>
