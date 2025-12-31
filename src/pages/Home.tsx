@@ -312,7 +312,7 @@ const INFINITY_PATH =
         distance={20}
         imgClass='sm:w-80 w-48 sm:h-88 h-46'
       >
-        <article className='relative z-50 '>
+        <article className='relative '>
           <h1 className='lg:text-4xl md:text-3xl text-3xl text-center font-f3 tracking-wider'>
             Experience Designs with <br />
             Mouse Trails
