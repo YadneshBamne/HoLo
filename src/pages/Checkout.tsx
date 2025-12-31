@@ -108,7 +108,7 @@ export default function Checkout() {
         setTimeout(() => toast.remove(), 300);
       }, 3000);
 
-      navigate('/');
+      navigate(`/order-success?order_id=${orderData.order_id}`);
     } catch (error: any) {
       console.error('Error placing order:', error);
       

@@ -166,7 +166,7 @@ export default function Home() {
                 <span className="blink-eye blink-delay shine-eye text-[#D8A1A5]">O</span>
                 KS
               </h1>
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-black drop-shadow-2xl leading-none font-f1">
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mt-6 text-black drop-shadow-2xl leading-none font-f1">
                 ON
               </h1>
               <h1 className="flex items-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black font-f1 leading-none">
@@ -235,7 +235,7 @@ export default function Home() {
             {/* Subtitle */}
             <div className="space-y-2">
               <p className="text-xl md:text-2xl ml-2 text-black tracking-[0.2em] uppercase font-bold">
-                Handmade Crochet
+                Made With Yarn, Love And Hook
               </p>
               <p className="text-lg md:text-xl ml-2 text-black max-w-lg leading-relaxed">
                 Each piece lovingly crafted by hand with premium yarn and attention to every detail

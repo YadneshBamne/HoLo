@@ -30,7 +30,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/hooksonloops/"
                 className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#D8A1A5] transition-all duration-300 hover:scale-110 shadow-lg"
                 aria-label="Instagram"
               >

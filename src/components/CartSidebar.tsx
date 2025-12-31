@@ -34,8 +34,8 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 h-full w-full sm:w-96 z-50 flex flex-col"
+            transition={{ type: 'tween', damping: 30, stiffness: 300 }}
+            className="fixed right-0 top-0 h-full w-90% sm:w-96 z-50 flex flex-col rounded-tl-3xl rounded-bl-3xl"
             style={{
               background: 'rgba(255, 255, 255, 0.95)',
               backdropFilter: 'blur(16px)',
@@ -48,14 +48,14 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
               style={{ borderColor: 'rgba(216, 161, 165, 0.2)' }}
             >
               <div className="flex items-center gap-3">
-                <div 
+                {/* <div 
                   className="w-10 h-10 rounded-xl flex items-center justify-center"
                   style={{
                     background: 'linear-gradient(135deg, #D8A1A5 0%, #E8B4B8 100%)',
                   }}
                 >
                   <ShoppingBag className="w-5 h-5 text-white" />
-                </div>
+                </div> */}
                 <div>
                   <h2 className="text-xl font-bold text-gray-900">Shopping Cart</h2>
                   <p className="text-sm text-gray-600">

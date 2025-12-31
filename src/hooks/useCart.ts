@@ -15,6 +15,8 @@ interface CartStore {
   clearCart: () => void;
   getCartCount: () => number;
   getCartTotal: () => number;
+  isInCart: (productId: string) => boolean; // NEW
+  getItemQuantity: (productId: string) => number; // NEW
 }
 
 export const useCart = create<CartStore>()(
@@ -69,6 +71,17 @@ export const useCart = create<CartStore>()(
       
       getCartTotal: () => {
         return get().items.reduce((total, item) => total + (item.price * item.quantity), 0);
+      },
+      
+      // NEW: Check if product is in cart
+      isInCart: (productId) => {
+        return get().items.some(item => item.id === productId);
+      },
+      
+      // NEW: Get quantity of product in cart
+      getItemQuantity: (productId) => {
+        const item = get().items.find(item => item.id === productId);
+        return item ? item.quantity : 0;
       },
     }),
     {

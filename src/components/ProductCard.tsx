@@ -1,8 +1,8 @@
-import { Heart, ShoppingCart, ChevronLeft, ChevronRight, Star, PackageX } from 'lucide-react';
+import { Heart, ShoppingCart, ChevronLeft, ChevronRight, Star, PackageX, Check } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSwipeable } from 'react-swipeable';
-import { useNavigate } from 'react-router-dom'; // Changed from next/navigation
+import { useNavigate } from 'react-router-dom';
 import { Product } from '../lib/types';
 import { useCart } from '../hooks/useCart';
 import { useFavorites } from '../hooks/useFavorites';
@@ -12,8 +12,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const navigate = useNavigate(); // Changed from useRouter
-  const { addToCart } = useCart();
+  const navigate = useNavigate();
+  const { addToCart, isInCart } = useCart();
   const { toggleFavorite, isFavorite } = useFavorites();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -26,6 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const hasMultipleImages = allImages.length > 1;
   const isOutOfStock = product.stock_status === 'out_of_stock';
+  const inCart = isInCart(product.id);
 
   const nextImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -46,7 +47,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   });
 
   const handleCardClick = () => {
-    navigate(`/product/${product.id}`); // Changed from router.push
+    navigate(`/product/${product.id}`);
   };
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -327,6 +328,11 @@ export default function ProductCard({ product }: ProductCardProps) {
               <>
                 <PackageX className="w-4 h-4" />
                 <span>Unavailable</span>
+              </>
+            ) : inCart ? (
+              <>
+                <Check className="w-4 h-4" strokeWidth={3} />
+                <span>In Your Cart</span>
               </>
             ) : (
               <>

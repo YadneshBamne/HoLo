@@ -7,6 +7,7 @@ import Checkout from './pages/Checkout';
 import Favorites from './pages/Favorites';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
+import OrderSuccess from './pages/PostOrder';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/order-success" element={<OrderSuccess />} />
            <Route path="*" element={<NotFound />} />
         </Routes>
 
