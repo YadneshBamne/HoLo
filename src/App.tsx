@@ -21,10 +21,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/order-success" element={<OrderSuccess />} />
-           <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-
-        {/* Footer */}
         <Footer/>
       </div>
     </BrowserRouter>

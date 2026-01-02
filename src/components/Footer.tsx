@@ -18,7 +18,7 @@ const Footer = () => {
             {/* Brand Name - Simple version without SplitText */}
             <div className="mb-6">
               <h2 className="text-5xl font-black font-f4 text-white leading-tight">
-                Hooks & Loops
+                Hooks On Loops
               </h2>
             </div>
 

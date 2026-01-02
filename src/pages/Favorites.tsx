@@ -291,7 +291,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.9 }}
               onClick={handleToggleFavorite}
-              className="rounded-full p-2.5 flex-shrink-0"
+              className="rounded-full p-2.5 shrink-0"
               style={{
                 background: 'rgba(255, 255, 255, 0.8)',
                 backdropFilter: 'blur(12px)',
@@ -332,7 +332,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             disabled={isOutOfStock}
             className={`px-6 py-3.5 rounded-2xl flex items-center gap-2.5 transition-all font-bold text-sm shadow-lg ${
               isOutOfStock
-                ? 'bg-gradient-to-r from-gray-200 to-gray-300 text-gray-500 cursor-not-allowed'
+                ? 'bg-linear-to-r from-gray-200 to-gray-300 text-gray-500 cursor-not-allowed'
                 : 'text-white hover:shadow-xl'
             }`}
             style={
