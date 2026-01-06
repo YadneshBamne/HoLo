@@ -3,11 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@layer base {
+/* @layer base {
   body {
-    @apply bg-gray-50 text-gray-900;
+    
   }
-}
+} */
 
 
 *{
