@@ -3,11 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* @layer base {
+@layer base {
   body {
-    
+    @apply bg-[#FFFFFF] text-gray-900;
   }
-} */
+}
 
 
 *{
@@ -235,6 +235,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }
