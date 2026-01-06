@@ -3,7 +3,7 @@ import SplitText from "./SplitText";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-[#D8A1A5] to-[#E8B4B8] overflow-hidden">
+    <footer className="relative bg-linear-to-br from-[#D8A1A5] to-[#E8B4B8] overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-white blur-3xl" />

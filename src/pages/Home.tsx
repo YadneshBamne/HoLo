@@ -285,7 +285,7 @@ export default function Home() {
 
 
       {/* Scrolling Text Marquee */}
-      <section className="py-12 mt-30 bg-primary-lighter overflow-hidden">
+      <section className="py-12 mt-30 bg-[#FFFFFF] overflow-hidden">
         <ScrollBaseAnimation
           delay={500}
           baseVelocity={-3}
@@ -305,7 +305,7 @@ export default function Home() {
       </section>
 
       {/* Mouse Trail Interactive Section - Full Screen */}
-      <section className="h-screen w-full flex items-center overflow-hidden justify-center rounded-t-5xl">
+      <section className="h-screen w-full bg-[#FFFFFF] flex items-center overflow-hidden justify-center rounded-t-5xl">
         <ImageMouseTrail
           items={images}
           maxNumberOfImages={5}
@@ -324,7 +324,7 @@ export default function Home() {
 
 
 
-      <section id="products" className="py-24 mb-32 relative overflow-hidden">
+      <section id="products" className="py-24 bg-[#FFFFFF] mb-32 relative overflow-hidden">
         {/* Background Gradient */}
         <div
           className="absolute inset-0 -z-10"
@@ -421,7 +421,7 @@ export default function Home() {
       {/* Features Section */}
       {/* Features Section - Redesigned */}
       <section
-        className="py-24 w-full relative overflow-hidden"
+        className="py-24 bg-[#FFFFFF] w-full relative overflow-hidden"
       // style={{
       //   background: 'linear-gradient(180deg, #FFFFFF 0%, #FCE7F3 50%, #FFF0F3 100%)',
       // }}

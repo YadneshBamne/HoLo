@@ -29,7 +29,7 @@ export default function ProductDrawer({ productId, isOpen, onClose }: ProductDra
   }, [productId, isOpen]);
 
   const fetchProduct = async () => {
-    if (!productId) return;
+    if (!productId) return; 
 
     setLoading(true);
     try {
